@@ -1,3 +1,9 @@
+---
+layout: post
+title: input()과 sys.stdin.readline()의 차이
+categories: Python Algorithm
+tags: [Python Algorithm]
+---
 # input()과 sys.stdin.readline()의 차이
 
 
