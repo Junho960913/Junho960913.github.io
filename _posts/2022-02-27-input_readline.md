@@ -4,10 +4,6 @@ title: input()과 sys.stdin.readline()의 차이
 categories: Python Algorithm
 tags: Python Algorithm
 ---
-# input()과 sys.stdin.readline()의 차이
-
-
-
 ​	코딩 테스트에 있어서, 반복문으로 입력을 여러줄 받아야하는 경우 단순히 input()을 이용하면 시간 초과가 발생할 수 있다.
 
 따라서 입력을 빠르게 받기위한 방법으로 sys.stdin.readline()을 이용한다. 아래 문제를 참고해보도록 하자.
