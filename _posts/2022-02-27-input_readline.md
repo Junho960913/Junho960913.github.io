@@ -1,9 +1,7 @@
----
-layout: post
-title: input()과 sys.stdin.readline()의 차이
-categories: Python Algorithm
-tags: Python Algorithm
----
+# input()과 sys.stdin.readline()의 차이
+
+
+
 ​	코딩 테스트에 있어서, 반복문으로 입력을 여러줄 받아야하는 경우 단순히 input()을 이용하면 시간 초과가 발생할 수 있다.
 
 따라서 입력을 빠르게 받기위한 방법으로 sys.stdin.readline()을 이용한다. 아래 문제를 참고해보도록 하자.
@@ -33,7 +31,7 @@ for i in range(n):
 
 ​	그런데 한가지 주의해야할 것은, sys.stdin.readline을 이용할 때 개행문자('\n')도 함께 포함되어 입력되기 때문에 만약 개행문자를 없애야 하는 상황이라면 sys.stdin.readline().rstrip()을 이용하여 개행문자를 없애도록 해야한다. 위의 예에서는 int 형으로 변경하는 과정에서 개행문자가 없어지기 때문에 따로 rstrip을 해주지 않아도 된다. 하지만 다음과 같이 문자열을 받아오는 경우에는 주의하도록 하자.
 
-<img src="https://user-images.githubusercontent.com/96689787/155880502-cd956262-8727-4116-b303-80f2c8524cfc.png" alt="스크린샷 2022-02-27 오후 8.24.42" style="zoom:25%;" />
+<img src="/Users/Jang/Desktop/스크린샷 2022-02-27 오후 8.24.42.png" alt="스크린샷 2022-02-27 오후 8.24.42" style="zoom:50%;" />
 
 위와 같은 입력을 2차원 리스트로 받아오기 위해서 다음과 같이 코드를 작성할 수 있다.
 
