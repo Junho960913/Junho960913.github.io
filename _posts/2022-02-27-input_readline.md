@@ -30,5 +30,30 @@ for i in range(n):
   a, b = map(int, input().split())
   print(a+b)
 ```
+​	그런데 한가지 주의해야할 것은, sys.stdin.readline을 이용할 때 개행문자('\n')도 함께 포함되어 입력되기 때문에 만약 개행문자를 없애야 하는 상황이라면 sys.stdin.readline().rstrip()을 이용하여 개행문자를 없애도록 해야한다. 위의 예에서는 int 형으로 변경하는 과정에서 개행문자가 없어지기 때문에 따로 rstrip을 해주지 않아도 된다. 하지만 다음과 같이 문자열을 받아오는 경우에는 주의하도록 하자.
 
-​	그런데 한가지 주의해야할 것은, sys.stdin.readline을 이용할 때 개행문자('/n')도 함께 포함되어 입력되기 때문에 만약 개행문자를 없애야 하는 상황이라면 sys.stdin.readline().rstrip()을 이용하여 개행문자를 없애도록 해야한다. 위의 예에서는 int 형으로 변경하는 과정에서 개행문자가 없어지기 때문에 따로 rstrip을 해주지 않아도 된다. 하지만 문자열을 받아오는 경우에는 주의하도록 하자.
+<img src="/Users/Jang/Library/Application Support/typora-user-images/스크린샷 2022-02-27 오후 7.37.43.png" alt="스크린샷 2022-02-27 오후 7.37.43" style="zoom:50%;" />
+
+위와 같은 입력을 2차원 리스트로 받아오기 위해서 다음과 같이 코드를 작성할 수 있다.
+
+```python
+from sys import stdin
+input = stdin.readline
+
+n, m = map(int, input().split())
+Board = [list(input().rstrip()) for _ in range(n)]
+#result = [['#', '#', '#', '#', '#'], ['#', '.', '.', 'B', '#'], ['#', '.', '#', '.', '#'], ['#', 'R', 'O', '.', '#'], ['#', '#', '#', '#', '#']]
+```
+
+하지만 만약 여기서 rstrip을 쓰지 않았다면 다음과 같은 결과가 나온다.
+
+```python
+from sys import stdin
+input = stdin.readline
+
+n, m = map(int, input().split())
+Board = [list(input()) for _ in range(n)]
+#result = [['#', '#', '#', '#', '#', '\n'], ['#', '.', '.', 'B', '#', '\n'], ['#', '.', '#', '.', '#', '\n'], ['#', 'R', 'O', '.', '#', '\n'], ['#', '#', '#', '#', '#', '\n']]
+```
+
+따라서, 만약 sys.stdin.readline을 이용하게 된다면 개행문자 꼭 고려해야 한다.
